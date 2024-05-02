@@ -42,8 +42,16 @@ abstract class Publisher{
         firstName: string
         lastName: string
         //
+        items: Publisher[]
         static items: Publisher[]
-        //get+set
+        
+        getItems(): Publisher[] {
+            return this.items;
+          }
+        setItems(items: Publisher[]): void {
+            this.items = items;
+        }
+
         delivery(item:Publisher):void{
             if(item.copies==0) return
             if(item.copies == Reader.items.length) return
